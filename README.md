@@ -40,7 +40,7 @@ Uma aplicação web moderna e interativa para calcular e comparar sistemas de am
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/calculadora-amortizacao.git
+git clone https://github.com/GersonResplandes/calculadora-amortizacao.git
 ```
 
 2. Navegue até o diretório do projeto:
@@ -126,7 +126,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👥 Autores
 
-- Seu Nome - [@seu-usuario](https://github.com/seu-usuario)
+- Gérson Resplandes de Sá Sousa - [@resplandes.gerson.001](https://github.com/seu-usuario)
 
 ## 🙏 Agradecimentos
 
@@ -137,7 +137,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📞 Suporte
 
-Para suporte, envie um email para seu-email@exemplo.com ou abra uma issue no repositório.
+Para suporte, envie um email para sagerson@acad.ifma.edu.br ou abra uma issue no repositório.
 
 ## 🔄 Atualizações Futuras
 
@@ -149,4 +149,4 @@ Para suporte, envie um email para seu-email@exemplo.com ou abra uma issue no rep
 
 ---
 
-⭐️ Desenvolvido com ❤️ por [Seu Nome](https://github.com/seu-usuario)
+⭐️ Desenvolvido por [Gérson Resplandes de Sá Sousa](https://github.com/seu-usuario)
