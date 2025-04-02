@@ -1,79 +1,548 @@
+/* Variáveis CSS */
+:root {
+  /* Cores */
+  --primary-color: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --success-color: #28a745;
+  --success-hover: #218838;
+  --danger-color: #dc3545;
+  --danger-hover: #c82333;
+  --warning-color: #ffc107;
+  --warning-hover: #e0a800;
+  --info-color: #0dcaf0;
+  --info-hover: #0bacd5;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 12px rgba(0, 0, 0, 0.15);
+
+  /* Bordas */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+
+  /* Transições */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+
+  /* Espaçamentos */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+}
+
+/* Reset e Estilos Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+  line-height: 1.5;
 }
 
+/* Tipografia */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.display-4 {
+  background: linear-gradient(45deg, var(--primary-color), var(--info-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--shadow-sm);
+}
+
+/* Layout */
 .container {
-  max-width: 800px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  padding: 0 var(--spacing-md);
 }
 
-h1 {
-  text-align: center;
-  color: #2c3e50;
+/* Navbar */
+.navbar {
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md) 0;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
-label {
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
+/* Cards */
+.card {
+  background-color: #fff;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 10px 5px;
+  overflow: hidden;
 }
 
-button:hover {
-  background-color: #2980b9;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
-#resultado {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #2c3e50;
+.card-body {
+  padding: var(--spacing-xl);
 }
 
-table {
+.card-title {
+  color: var(--gray-900);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Formulário */
+.form-floating {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+}
+
+.form-control,
+.form-select {
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-md);
+  transition: all var(--transition-normal);
+  height: calc(3.5rem + 2px);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--success-color);
+  box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.15);
+}
+
+.form-floating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: var(--spacing-md) var(--spacing-xl);
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: all var(--transition-normal);
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.form-floating > .input-group > .form-control:focus ~ label,
+.form-floating > .input-group > .form-control:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  background-color: #fff;
+  padding: 0 var(--spacing-sm);
+  color: var(--success-color);
+  font-weight: 600;
+  z-index: 5;
+}
+
+.input-group-text {
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  color: var(--gray-600);
+  font-weight: 500;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  transition: all var(--transition-normal);
+  z-index: 3;
+}
+
+.input-group-text i {
+  font-size: 1.1rem;
+  transition: all var(--transition-normal);
+}
+
+.input-group:focus-within .input-group-text {
+  border-color: var(--success-color);
+  background-color: #f8fff9;
+}
+
+.input-group:focus-within .input-group-text i {
+  transform: scale(1.1);
+  color: var(--success-color);
+}
+
+/* Botões */
+.btn {
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-color), var(--info-color));
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, var(--primary-hover), var(--info-hover));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+}
+
+.btn-outline-success,
+.btn-outline-danger {
+  border-width: 2px;
+}
+
+/* Tabelas */
+.table {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: var(--gray-100);
+  border-bottom: 2px solid var(--gray-300);
+  font-weight: 600;
+  padding: var(--spacing-md);
+}
+
+.table tbody td {
+  padding: var(--spacing-md);
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Gráficos */
+.chart-container {
+  position: relative;
+  height: 400px;
   width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-  font-size: 14px;
+  background-color: #fff;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
 }
 
-table,
-th,
-td {
-  border: 1px solid #ddd;
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
-th,
-td {
-  padding: 10px;
-  text-align: left;
+/* Animações */
+.fade-in {
+  animation: fadeIn var(--transition-slow);
 }
 
-#grafico {
-  margin-top: 30px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tema Escuro */
+[data-bs-theme="dark"] {
+  background-color: var(--dark-color);
+  color: var(--gray-100);
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+}
+
+[data-bs-theme="dark"] .table {
+  color: var(--gray-100);
+}
+
+[data-bs-theme="dark"] .table thead th {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+}
+
+[data-bs-theme="dark"] .table tbody td {
+  border-color: var(--gray-700);
+}
+
+[data-bs-theme="dark"] .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+  color: var(--gray-100);
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  background-color: var(--gray-800);
+  border-color: var(--primary-color);
+  color: var(--gray-100);
+}
+
+[data-bs-theme="dark"] .form-floating label {
+  color: var(--gray-500);
+}
+
+[data-bs-theme="dark"] .text-muted {
+  color: var(--gray-500) !important;
+}
+
+/* Personalização dos inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Personalização dos gráficos */
+canvas {
+  max-height: 400px;
+  width: 100% !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card-body {
+    padding: var(--spacing-md);
+  }
+
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .table-responsive {
+    margin: 0 calc(-1 * var(--spacing-md));
+  }
+
+  canvas {
+    max-height: 300px;
+  }
+}
+
+/* Tabela de Comparação */
+#comparisonTable .table {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+#comparisonTable .table thead tr:first-child th {
+  background: linear-gradient(45deg, var(--primary-color), var(--info-color));
+  color: #fff;
+  border: none;
+  padding: var(--spacing-md);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+#comparisonTable .table thead tr:last-child th {
+  background-color: var(--gray-100);
+  border-bottom: 2px solid var(--gray-300);
+  padding: var(--spacing-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+#comparisonTable .table tbody td {
+  padding: var(--spacing-md);
+  vertical-align: middle;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+#comparisonTable .table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#comparisonTable .table tbody tr:hover td {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Tema Escuro - Tabela de Comparação */
+[data-bs-theme="dark"] #comparisonTable .table thead tr:first-child th {
+  background: linear-gradient(45deg, var(--primary-hover), var(--info-hover));
+  color: #fff;
+}
+
+[data-bs-theme="dark"] #comparisonTable .table thead tr:last-child th {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+  color: #fff;
+}
+
+[data-bs-theme="dark"] #comparisonTable .table tbody td {
+  border-color: var(--gray-700);
+  color: #fff;
+}
+
+[data-bs-theme="dark"] #comparisonTable .table tbody tr:hover td {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] .chart-container {
+  background-color: var(--gray-800);
+}
+
+/* Responsividade - Tabela de Comparação */
+@media (max-width: 768px) {
+  #comparisonTable .table-responsive {
+    margin: 0 calc(-1 * var(--spacing-md));
+  }
+
+  #comparisonTable .table th,
+  #comparisonTable .table td {
+    padding: var(--spacing-sm);
+    font-size: 0.75rem;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+}
+
+/* Estilos para inputs e selects */
+.input-group {
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.input-group-text {
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.form-control {
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-select {
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  background-color: #fff;
+}
+
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Tema escuro */
+[data-bs-theme="dark"] .input-group-text {
+  background-color: var(--gray-800);
+  border-color: var(--gray-700);
+  color: var(--gray-500);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background-color: var(--gray-900);
+  border-color: var(--gray-700);
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  background-color: var(--gray-900);
+  border-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Animação dos ícones */
+.input-group-text i {
+  transition: all var(--transition-fast);
+}
+
+.input-group:focus-within .input-group-text i {
+  transform: scale(1.1);
+  color: var(--primary-color);
+}
+
+/* Botões de alternar tipo de gráfico */
+.btn-group .btn {
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  margin-left: var(--spacing-xs);
+}
+
+.btn-group .btn:first-child {
+  margin-left: 0;
+}
+
+/* Melhorias nos botões */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-group .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Melhorias nos inputs */
+.input-group {
+  transition: all var(--transition-fast);
+}
+
+.input-group:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.15);
 }
