@@ -1,0 +1,622 @@
+/* Reset e configurações base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta de Cores Profissional para Sistemas Financeiros */
+
+  /* Cores Principais - Azul Profissional */
+  --primary-blue: #1e40af; /* Azul corporativo */
+  --primary-blue-light: #3b82f6; /* Azul claro */
+  --primary-blue-dark: #1e3a8a; /* Azul escuro */
+  --primary-blue-accent: #60a5fa; /* Azul acento */
+
+  /* Cores Neutras - Cinza Profissional */
+  --neutral-900: #111827; /* Cinza muito escuro */
+  --neutral-800: #1f2937; /* Cinza escuro */
+  --neutral-700: #374151; /* Cinza médio escuro */
+  --neutral-600: #4b5563; /* Cinza médio */
+  --neutral-500: #6b7280; /* Cinza médio claro */
+  --neutral-400: #9ca3af; /* Cinza claro */
+  --neutral-300: #d1d5db; /* Cinza muito claro */
+  --neutral-200: #e5e7eb; /* Cinza super claro */
+  --neutral-100: #f3f4f6; /* Cinza ultra claro */
+  --neutral-50: #f9fafb; /* Cinza branco */
+
+  /* Cores de Status - Verde e Vermelho Profissionais */
+  --success-green: #059669; /* Verde sucesso */
+  --success-green-light: #10b981; /* Verde claro */
+  --danger-red: #dc2626; /* Vermelho erro */
+  --danger-red-light: #ef4444; /* Vermelho claro */
+  --warning-orange: #d97706; /* Laranja aviso */
+  --warning-orange-light: #f59e0b; /* Laranja claro */
+  --info-blue: #2563eb; /* Azul informação */
+  --info-blue-light: #3b82f6; /* Azul informação claro */
+
+  /* Cores de Fundo */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-dark: var(--neutral-900);
+  --bg-card: #ffffff;
+
+  /* Cores de Texto */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-700);
+  --text-muted: var(--neutral-500);
+  --text-light: #ffffff;
+  --text-inverse: var(--neutral-900);
+
+  /* Cores de Interface */
+  --primary-color: var(--primary-blue);
+  --primary-dark: var(--primary-blue-dark);
+  --primary-light: var(--primary-blue-light);
+  --secondary-color: var(--neutral-600);
+  --success-color: var(--success-green);
+  --danger-color: var(--danger-red);
+  --warning-color: var(--warning-orange);
+  --info-color: var(--info-blue);
+
+  /* Gradientes Profissionais */
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-blue-dark) 100%
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--neutral-800) 0%,
+    var(--neutral-700) 100%
+  );
+  --gradient-success: linear-gradient(
+    135deg,
+    var(--success-green) 0%,
+    var(--success-green-light) 100%
+  );
+  --gradient-danger: linear-gradient(
+    135deg,
+    var(--danger-red) 0%,
+    var(--danger-red-light) 100%
+  );
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+
+  /* Sombras Profissionais */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-blue: 0 4px 12px rgba(30, 64, 175, 0.15);
+
+  /* Bordas */
+  --border-radius: 0.5rem;
+  --border-radius-sm: 0.375rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+
+  /* Transições */
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Efeitos */
+  --backdrop-blur: blur(8px);
+  --glass-effect: rgba(255, 255, 255, 0.8);
+}
+
+/* Tema escuro profissional */
+[data-bs-theme="dark"] {
+  --bg-primary: var(--neutral-900);
+  --bg-secondary: var(--neutral-800);
+  --bg-tertiary: var(--neutral-700);
+  --bg-card: var(--neutral-800);
+  --text-primary: var(--neutral-50);
+  --text-secondary: var(--neutral-300);
+  --text-muted: var(--neutral-400);
+  --gradient-card: linear-gradient(
+    135deg,
+    var(--neutral-800) 0%,
+    var(--neutral-700) 100%
+  );
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Navbar Profissional */
+.navbar {
+  background: var(--gradient-primary) !important;
+  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 0;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text-light) !important;
+  letter-spacing: 0.02em;
+}
+
+.navbar-brand i {
+  color: var(--neutral-100);
+  margin-right: 0.5rem;
+}
+
+/* Cards Profissionais */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.card-header {
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  border: none;
+  padding: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Formulários Profissionais */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-control,
+.form-select {
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  transition: var(--transition);
+  background: var(--bg-primary);
+  width: 100%;
+  color: var(--text-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+  outline: none;
+}
+
+.input-group-text {
+  background: var(--neutral-100);
+  border: 1px solid var(--neutral-300);
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+}
+
+.input-group .form-control {
+  border-left: none;
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+
+.input-group .form-select {
+  border-left: none;
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+
+/* Botões Profissionais */
+.btn {
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  transition: var(--transition);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  background: var(--gradient-primary);
+  color: var(--text-light);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline-success {
+  background: var(--gradient-success);
+  color: var(--text-light);
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline-danger {
+  background: var(--gradient-danger);
+  color: var(--text-light);
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline-success:hover,
+.btn-outline-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  color: var(--text-light);
+}
+
+/* Tabelas Profissionais */
+.table {
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--neutral-200);
+}
+
+.table thead th {
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  padding: 1rem;
+  font-size: 0.75rem;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.table tbody tr:hover {
+  background: var(--neutral-50);
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--neutral-200);
+  vertical-align: middle;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+/* Gráficos Profissionais */
+.chart-container {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--neutral-200);
+}
+
+.chart-title {
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Resumo Financeiro Profissional */
+.financial-summary {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--neutral-200);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.summary-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.summary-label {
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+/* Alertas Profissionais */
+.alert {
+  border-radius: var(--border-radius-sm);
+  border: none;
+  padding: 1rem 1.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.alert-info {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--text-primary);
+  border-left: 4px solid var(--info-blue);
+}
+
+/* Spinner Profissional */
+.spinner-border {
+  color: var(--primary-blue);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 0.2em;
+}
+
+/* Animações Profissionais */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsividade Profissional */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .summary-value {
+    font-size: 1.125rem;
+  }
+
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .table-responsive {
+    border-radius: var(--border-radius-sm);
+  }
+}
+
+/* Tipografia Profissional */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.display-4 {
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+/* Footer Profissional */
+footer {
+  background: var(--gradient-secondary);
+  color: var(--text-light);
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--neutral-700);
+}
+
+/* Efeitos de Texto Profissionais */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.bg-gradient {
+  background: var(--gradient-primary);
+  color: var(--text-light);
+}
+
+/* Foco Profissional */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+  outline: none;
+}
+
+/* Ícones Profissionais */
+.bi {
+  color: var(--text-secondary);
+}
+
+/* Container Profissional */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Main Profissional */
+main {
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+}
+
+/* Cards de Resumo Profissionais */
+.summary-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--neutral-200);
+  transition: var(--transition);
+}
+
+.summary-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.summary-card .h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card .text-muted {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* Cards de Gráfico Profissionais */
+.chart-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--neutral-200);
+}
+
+.chart-title {
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Botões de Exportação Profissionais */
+.export-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.export-buttons .btn {
+  min-width: 100px;
+}
+
+/* Container de Formulário Profissional */
+.form-container {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--neutral-200);
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+/* Estados de Erro Profissionais */
+.form-control.is-invalid {
+  border-color: var(--danger-red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.invalid-feedback {
+  color: var(--danger-red);
+  font-weight: 500;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Tema Escuro Profissional */
+[data-bs-theme="dark"] .card {
+  background: var(--bg-card);
+  border-color: var(--neutral-700);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  background: var(--bg-card);
+  border-color: var(--neutral-600);
+  color: var(--text-primary);
+}
+
+[data-bs-theme="dark"] .table {
+  background: var(--bg-card);
+  border-color: var(--neutral-700);
+}
+
+[data-bs-theme="dark"] .table td {
+  border-color: var(--neutral-700);
+}

@@ -1,152 +1,212 @@
-# Calculadora de Amortização
+# 🧮 Calculadora de Matemática Financeira
 
-Uma aplicação web moderna e interativa para calcular e comparar sistemas de amortização (SAC e PRICE) de empréstimos e financiamentos.
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?color=00BFFF&size=30&center=true&vCenter=true&width=900&lines=Calculadora+Financeira+com+React+e+TypeScript;Sistemas+SAC+e+PRICE+com+Gráficos+Interativos;Exportação+de+Dados+e+Interface+Responsiva"/>
+</div>
 
-## 🚀 Funcionalidades
-
-- **Cálculo de Amortização**
-
-  - Sistema SAC (Sistema de Amortização Constante)
-  - Sistema PRICE (Sistema de Amortização Francês)
-  - Comparação entre os dois sistemas
-
-- **Visualização de Dados**
-
-  - Tabelas de amortização detalhadas
-  - Gráficos interativos de evolução do saldo devedor
-  - Gráficos de composição das parcelas
-  - Alternância entre gráficos de linha e barras
-
-- **Recursos Adicionais**
-  - Formatação automática de valores monetários e percentuais
-  - Conversão automática de taxas de juros
-  - Exportação de dados para CSV e PDF
-  - Histórico de cálculos
-  - Tema claro/escuro
-  - Interface responsiva
-
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5
-- CSS3 (com variáveis CSS e Flexbox)
-- JavaScript (ES6+)
-- Bootstrap 5.3
-- Chart.js
-- jsPDF
-- Bootstrap Icons
-
-## 📦 Instalação
-
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/GersonResplandes/calculadora-amortizacao.git
-```
-
-2. Navegue até o diretório do projeto:
-
-```bash
-cd calculadora-amortizacao
-```
-
-3. Abra o arquivo `index.html` em seu navegador ou utilize um servidor local.
-
-## 💻 Como Usar
-
-1. Preencha os campos do formulário:
-
-   - Valor do empréstimo
-   - Taxa de juros
-   - Número de parcelas
-   - Sistema de amortização (SAC, PRICE ou Comparação)
-   - Período da taxa de juros
-   - Período das parcelas
-
-2. Clique em "Calcular" para gerar a tabela de amortização e os gráficos
-
-3. Use os botões de alternância para mudar o tipo de visualização dos gráficos
-
-4. Exporte os dados para CSV ou PDF conforme necessário
-
-## 📊 Exemplo de Uso
-
-Para um empréstimo de R$ 10.000,00 com:
-
-- Taxa de juros: 2,00% ao mês
-- Prazo: 5 parcelas mensais
-- Sistema: Comparação SAC e PRICE
-
-O sistema irá gerar:
-
-- Tabela comparativa dos dois sistemas
-- Gráfico de evolução do saldo devedor
-- Gráfico de composição das parcelas
-
-## 🔧 Personalização
-
-O projeto utiliza variáveis CSS para fácil personalização de:
-
-- Cores
-- Sombras
-- Bordas
-- Espaçamentos
-- Transições
-
-## 🌐 Responsividade
-
-A aplicação é totalmente responsiva e funciona em:
-
-- Desktops
-- Tablets
-- Smartphones
-
-## 🎨 Temas
-
-- Tema claro (padrão)
-- Tema escuro (acessível via botão na barra de navegação)
-
-## 📱 Compatibilidade
-
-- Chrome (recomendado)
-- Firefox
-- Safari
-- Edge
-
-## 🤝 Contribuindo
-
-1. Faça um Fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👥 Autores
-
-- Gérson Resplandes de Sá Sousa - [@resplandes.gerson.001](https://github.com/seu-usuario)
-
-## 🙏 Agradecimentos
-
-- [Bootstrap](https://getbootstrap.com/)
-- [Chart.js](https://www.chartjs.org/)
-- [jsPDF](https://github.com/parallax/jsPDF)
-- [Bootstrap Icons](https://icons.getbootstrap.com/)
-
-## 📞 Suporte
-
-Para suporte, envie um email para sagerson@acad.ifma.edu.br ou abra uma issue no repositório.
-
-## 🔄 Atualizações Futuras
-
-- [ ] Adicionar mais sistemas de amortização
-- [ ] Implementar análise de cenários
-- [ ] Adicionar mais tipos de gráficos
-- [ ] Melhorar a exportação de dados
-- [ ] Adicionar mais opções de personalização
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+</div>
 
 ---
 
-⭐️ Desenvolvido por [Gérson Resplandes de Sá Sousa](https://github.com/seu-usuario)
+## 🚀 Funcionalidades
+
+### 📊 Cálculos Financeiros
+
+- **Sistema SAC (Sistema de Amortização Constante)**
+- **Sistema PRICE (Sistema Francês)**
+- **Comparação entre sistemas**
+- **Cálculo de juros compostos**
+- **Valor presente e futuro**
+- **Taxa Interna de Retorno (TIR)**
+
+### 📈 Visualizações
+
+- Gráficos interativos de evolução do saldo devedor
+- Comparação de valores de parcelas
+- Composição de amortização vs juros
+- Gráficos de barras para comparação de sistemas
+
+### 💾 Exportação
+
+- Exportação para CSV
+- Exportação para PDF
+- Histórico de cálculos no localStorage
+
+### 🎨 Interface
+
+- Design responsivo com Bootstrap 5
+- Tema escuro/claro
+- Formulários intuitivos
+- Tabelas detalhadas de amortização
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/jsPDF-000000?style=for-the-badge&logo=javascript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+</div>
+
+---
+
+## 📦 Instalação
+
+```bash
+# Clone o repositório
+git clone [url-do-repositorio]
+
+# Entre na pasta do projeto
+cd FinancialMathematics
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
+npm run dev
+```
+
+---
+
+## 🎯 Como Usar
+
+### 1. **Preencha os dados do empréstimo:**
+   - Valor do empréstimo
+   - Taxa de juros (mensal ou anual)
+   - Número de parcelas
+   - Período das parcelas
+
+### 2. **Escolha o sistema de amortização:**
+   - SAC: Parcelas decrescentes
+   - PRICE: Parcelas fixas
+   - Comparar: Análise de ambos os sistemas
+
+### 3. **Visualize os resultados:**
+   - Tabela detalhada de amortização
+   - Resumo financeiro
+   - Gráficos interativos
+   - Comparações visuais
+
+### 4. **Exporte os dados:**
+   - CSV para análise em Excel
+   - PDF para documentação
+
+---
+
+## 📋 Estrutura do Projeto
+
+```text
+src/
+├── components/
+│   ├── AmortizationTable.tsx    # Tabela de amortização
+│   ├── ComparisonTable.tsx       # Comparação SAC vs PRICE
+│   ├── FinancialCharts.tsx       # Gráficos interativos
+│   └── FinancialSummaryCard.tsx  # Resumo financeiro
+├── utils.ts                      # Funções de cálculo
+├── App.tsx                       # Componente principal
+└── main.tsx                      # Ponto de entrada
+```
+
+---
+
+## 🧮 Fórmulas Implementadas
+
+### Sistema SAC
+
+```
+Amortização = Valor do Empréstimo / Número de Parcelas
+Juros = Saldo Devedor × Taxa de Juros
+Parcela = Amortização + Juros
+```
+
+### Sistema PRICE
+
+```
+Parcela = PV × i × (1 + i)^n / ((1 + i)^n - 1)
+Onde:
+- PV = Valor Presente
+- i = Taxa de juros por período
+- n = Número de períodos
+```
+
+### Juros Compostos
+
+```
+FV = PV × (1 + r)^n
+Onde:
+- FV = Valor Futuro
+- PV = Valor Presente
+- r = Taxa de juros
+- n = Número de períodos
+```
+
+---
+
+## 🎨 Personalização
+
+O projeto utiliza Bootstrap 5 e pode ser facilmente personalizado:
+
+- **Cores:** Modifique as variáveis CSS do Bootstrap
+- **Layout:** Ajuste os componentes React
+- **Gráficos:** Personalize as opções do Chart.js
+- **Exportação:** Configure os templates de PDF
+
+---
+
+## 📱 Responsividade
+
+A aplicação é totalmente responsiva e funciona em:
+
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (< 768px)
+
+---
+
+## 🔧 Scripts Disponíveis
+
+```bash
+npm run dev      # Inicia o servidor de desenvolvimento
+npm run build    # Gera build de produção
+npm run preview  # Visualiza o build de produção
+npm run lint     # Executa o linter
+```
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+---
+
+## 🤝 Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
+5. Abra um Pull Request
+
+---
+
+## 📞 Suporte
+
+Para dúvidas ou sugestões, abra uma issue no repositório.
+
+---
+
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=footer&animation=fadeIn"/>
+  <sub>Desenvolvido com ❤️ para facilitar cálculos financeiros</sub>
+</div>
